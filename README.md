@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pulse UI
 
-## Getting Started
+A polished Next.js demo built to showcase fluid animations, interactive components, and modern UI patterns — designed as a portfolio piece.
 
-First, run the development server:
+**Live demo:** [pulse-ui on Vercel](#) · **Demo credentials:** `demo@example.com` / `Demo@1234`
+
+---
+
+## What's inside
+
+### Landing page (`/`)
+- 3D tilt hero card with mouse-tracking perspective
+- Floating card stack that fans out on hover (vertical on mobile, horizontal on desktop)
+- Auto-playing form validation loop with animated password strength bar
+- Mini screensaver preview with live clock
+- Dark / light theme toggle with animated sun/moon transition
+- Smooth-scroll navigation
+
+### Login page (`/login`)
+- Real-time Zod validation with animated error messages
+- Password strength indicator (5 levels, spring-animated bar)
+- Card shake animation on failed submit
+- Idle screensaver after 15s of inactivity
+- Full dark / light theme support
+
+### Dashboard (`/dashboard`)
+- Animated stat counters on mount
+- Staggered activity feed entrance
+- Avatar dropdown with sign out
+- Idle screensaver after 10s of inactivity
+- Protected route — redirects to `/login` if unauthenticated
+- Full dark / light theme support
+
+---
+
+## Stack
+
+| | |
+|---|---|
+| Framework | Next.js 16 (App Router) |
+| Language | TypeScript |
+| Styling | Tailwind CSS v4 |
+| Animations | Framer Motion v12 |
+| Forms | React Hook Form + Zod |
+| Icons | Lucide React |
+| Font | Geist (next/font) |
+
+---
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project structure
 
-## Learn More
+```
+src/
+  app/                    # Routes (/, /login, /dashboard)
+  components/
+    landing/              # Hero, AnimationSection, ValidationSection, ScreensaverSection, CtaBanner, Navbar
+    auth/                 # LoginForm, LoginPage
+    dashboard/            # DashboardPage, StatsCard, ActivityFeed
+    screensaver/          # Full-screen idle screensaver
+    ui/                   # Button, Input, PasswordStrength, ThemeToggle
+    providers/            # ThemeProvider (dark/light)
+  hooks/
+    useIdle.ts            # Inactivity detection
+    useAnimatedCounter.ts # Eased number counter
+  lib/
+    validations/auth.ts   # Zod schemas
+    utils.ts              # cn() helper
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Auth
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+No backend. A hardcoded demo account is validated client-side and stored in `localStorage`.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+Email:    demo@example.com
+Password: Demo@1234
+```
