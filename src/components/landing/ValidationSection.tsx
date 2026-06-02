@@ -262,8 +262,8 @@ export function ValidationSection() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
         {/* Right: live form demo */}
         <motion.div
-          initial={{ opacity: 0, x: 32 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ delay: 0.1, type: "spring", stiffness: 80, damping: 16 }}
           className="flex justify-center min-h-[540px] items-center order-2 lg:order-2"
@@ -276,8 +276,8 @@ export function ValidationSection() {
 
         {/* Left: text */}
         <motion.div
-          initial={{ opacity: 0, x: -24 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ type: "spring", stiffness: 80, damping: 16 }}
           className="flex flex-col gap-6 order-1 lg:order-1"

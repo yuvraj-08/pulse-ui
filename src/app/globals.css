@@ -13,12 +13,13 @@
 html {
   background: #09090b;
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
   background: #09090b;
   color: #fafafa;
-  overflow-x: hidden;
+  overflow-x: clip;
   transition: background-color 0.3s ease, color 0.3s ease;
   font-family: var(--font-geist-sans, system-ui, sans-serif);
   -webkit-font-smoothing: antialiased;
